@@ -4,3 +4,11 @@ header {
 body {
   background-image: url(../img/cork.png);
 }
+.section {
+  position: relative;
+}
+.section .section-img #pin {
+  position: absolute;
+  top: -18px;
+  left: calc(50% - 18px);
+}
