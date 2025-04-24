@@ -6,9 +6,27 @@ body {
 }
 .section {
   position: relative;
+  transition: width 2s, transform 1s;
 }
 .section .section-img #pin {
   position: absolute;
   top: -18px;
   left: calc(50% - 18px);
 }
+
+p {
+  margin-bottom: 0px;
+}
+
+/* HOVER DELLE SEZIONI */
+.section:hover {
+  cursor: pointer;
+  transform: rotate(15deg) scale(1.04);
+
+  /* width: 105%; */
+}
+.section:hover #pin {
+  display: none;
+}
+
+/* ONCLICK IMMAGINE APERTA */

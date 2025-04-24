@@ -1,5 +1,6 @@
 const apiUri = "https://lanciweb.github.io/demo/api/pictures/";
 const memoriesEl = document.getElementById("memories");
+const sectionEl = document.querySelector();
 
 axios
 
@@ -10,7 +11,7 @@ axios
     responsesArray.data.forEach((response) => {
       const { id, title, date, url } = response;
       generatedHTml += `
-            <div class="col-4">
+        <div class="col-4">
           <div class="section p-3 bg-white text-dark">
             <div class="section-img">
               <img src="./img/pin.svg" alt="pin" id="pin" />
@@ -20,9 +21,9 @@ axios
                 width="100%"
               />
             </div>
-            <div class="section-text py-3">
-                <p>${date}</p>
-                <p>${title}</p>
+            <div class="section-text pt-3">
+                <p class="text-muted">${date}</p>
+                <h3>${title}</h3>
             </div>
           </div>
         </div>
