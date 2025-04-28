@@ -16,9 +16,8 @@ axios
           <div class="section-img">
           <img
           src="${url}"
-          alt="test"
+          alt="${title}"
           width="100%"
-          class="memory"
           />
           <img src="./img/pin.svg" alt="pin" id="pin" />
           </div>
@@ -32,18 +31,15 @@ axios
     });
     memoriesEl.innerHTML = generatedHTml;
     // PRENDO NODO DAL HTML GENERATO
-    const sectionsEl = document.querySelectorAll(
-      ".section.p-3.bg-white.text-dark"
-    );
+    const sectionsEl = document.querySelectorAll(".section");
 
     // ADDEVENTLISTENER SUL CLICK DELLA SEZIONE PER INGRANDIRE IMMAGINE
 
     sectionsEl.forEach((section) => {
       section.addEventListener("click", () => {
-        const imageSrc = document.querySelector(`#${section.id} img`);
-        console.log(imageSrc);
-        const currentUrlImage = imageSrc.getAttribute("src");
-        console.log(currentUrlImage);
+        const currentUrlImage = document
+          .querySelector(`#${section.id} img`)
+          .getAttribute("src");
 
         // LAYOVER DELL'IMAGINE APERTA
         const openHtml = `
