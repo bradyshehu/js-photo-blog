@@ -1,7 +1,6 @@
 const apiUri = "https://lanciweb.github.io/demo/api/pictures/";
 const memoriesEl = document.getElementById("memories");
 const bigImageEl = document.getElementById("open-image");
-const closeButtonEl = document.getElementById("close-button");
 axios
 
   .get(apiUri)
@@ -45,8 +44,19 @@ axios
         console.log(currentUrlImage);
 
         const openHtml = `
-        <div class=
+        <button id="close-button" class="btn btn-light fs-5">Chiudi</button>
+        <div class="text-center m-5">
+          <img src="${currentUrlImage}" alt="open-image" width="600px" />
+        </div>
         `;
+        bigImageEl.innerHTML = openHtml;
+        bigImageEl.classList.toggle("d-none");
+        section.classList.toggle("d-none");
+        const closeButtonEl = document.getElementById("close-button");
+        closeButtonEl.addEventListener("click", () => {
+          bigImageEl.classList.toggle("d-none");
+          section.classList.toggle("d-none");
+        });
       });
     });
   });
