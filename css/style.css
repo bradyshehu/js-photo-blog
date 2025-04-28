@@ -21,9 +21,7 @@ p {
 /* HOVER DELLE SEZIONI */
 .section:hover {
   cursor: pointer;
-  transform: rotate(15deg) scale(1.04);
-
-  /* width: 105%; */
+  transform: rotate(10deg) scale(1.04);
 }
 .section:hover #pin {
   display: none;
@@ -38,5 +36,6 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #00000030;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
 }
