@@ -9,6 +9,7 @@ axios
     let generatedHTml = ``;
     responsesArray.data.forEach((response) => {
       const { id, title, date, url } = response;
+      // GENERO L'HTML DINAMICAMENTE E LO AGGIUNGO IN PAGINA
       generatedHTml += `
       <div class="col-xl-4 col-md-6 col-sm-12">
         <div id="section-${id}" class="section p-3 bg-white text-dark">
@@ -30,11 +31,12 @@ axios
       `;
     });
     memoriesEl.innerHTML = generatedHTml;
+    // PRENDO NODO DAL HTML GENERATO
     const sectionsEl = document.querySelectorAll(
       ".section.p-3.bg-white.text-dark"
     );
 
-    // ******************* DA SISTEMARE *************************
+    // ADDEVENTLISTENER SUL CLICK DELLA SEZIONE PER INGRANDIRE IMMAGINE
 
     sectionsEl.forEach((section) => {
       section.addEventListener("click", () => {
@@ -43,6 +45,7 @@ axios
         const currentUrlImage = imageSrc.getAttribute("src");
         console.log(currentUrlImage);
 
+        // LAYOVER DELL'IMAGINE APERTA
         const openHtml = `
         <button id="close-button" class="btn btn-light fs-5">Chiudi</button>
         <div class="text-center m-5">
@@ -52,6 +55,8 @@ axios
         bigImageEl.innerHTML = openHtml;
         bigImageEl.classList.toggle("d-none");
         section.classList.toggle("d-none");
+
+        // BOTTONE DI CHIUSURA DEL LAYOVER DELL'IMMAGINE
         const closeButtonEl = document.getElementById("close-button");
         closeButtonEl.addEventListener("click", () => {
           bigImageEl.classList.toggle("d-none");
@@ -60,5 +65,3 @@ axios
       });
     });
   });
-
-// bigImageEl.append(imgEl)
