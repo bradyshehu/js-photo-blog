@@ -49,7 +49,7 @@ axios
         const openHtml = `
         <button id="close-button" class="btn btn-light fs-5">Chiudi</button>
         <div class="text-center m-5">
-          <img src="${currentUrlImage}" alt="open-image" width="600px" />
+          <img src="${currentUrlImage}" alt="open-image" width="800px" />
         </div>
         `;
         bigImageEl.innerHTML = openHtml;
